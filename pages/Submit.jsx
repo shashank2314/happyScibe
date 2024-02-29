@@ -4,8 +4,6 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 
-import { apiConnector } from '@/services/apiconnector';
-
 export default function Submit(){
     const [formData,setformData] = useState({
         email:"",
