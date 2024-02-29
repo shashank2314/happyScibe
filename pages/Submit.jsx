@@ -24,7 +24,6 @@ export default function Submit(){
     function SubmitHandler(e){
         e.preventDefault();
         setShow(true);
-        
         console.log(formData);
     }
     
@@ -52,7 +51,7 @@ export default function Submit(){
                 <div className='w-full h-[1px]  bg-gray-500'></div>
                 <div className='flex flex-row px-20 py-10 justify-center gap-12 text-xl'>
                     <div className='flex flex-row items-center gap-3'>
-                        <input type="checkbox" id="student" name="student" onChange={ChangeHandler} value={formData.student} className='w-5 h-5 accent-[#2e2e2e]' />
+                        <input type="checkbox" id="student" name="student" onChange={ChangeHandler} checked={formData.student} className='w-5 h-5 accent-[#2e2e2e]' />
                         <label htmlFor="student">Are you a Student?</label>
                     </div>
 
@@ -78,7 +77,7 @@ export default function Submit(){
             <div className={`${show?"fixed inset-[1%] z-[1000] !mt-0 grid h-[98%] w-[98%] place-items-center overflow-auto text-xl bg-white bg-opacity-10 backdrop-blur-sm":"hidden"}`}>
                 <div onClick={()=>setShow(false)} className='cursor-pointer text-4xl'><RxCross1 /></div>
                 <div>Your Email: {formData.email}</div>
-                <div>Are you a Student?: {formData.student}</div>
+                <div>Are you a Student?: {formData.student?(<span>YES</span>):(<span>NO</span>)}</div>
                 <div>Your Age: {formData.age}</div>
             </div>
         </div>
