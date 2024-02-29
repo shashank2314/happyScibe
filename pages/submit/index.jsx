@@ -26,25 +26,10 @@ const index = () => {
     function SubmitHandler(e){
         e.preventDefault();
         setShow(true);
-        formHandler(formData)
+        
         console.log(formData);
     }
-    const formHandler = async(data) => {
-        
-        try{
-            await apiConnector(
-                "POST",
-                "https://videodubber.ai/testinput",
-                data
-            );
-            
-            console.log("send data successfully");
-        }
-        catch(err){
-            console.log(err.message);
-            
-        }
-    }
+    
     return (
         <div className='w-full px-10 bg-[#242424] text-white py-20 flex flex-col gap-10 items-center md:items-end'>
             <div className='w-full flex flex-col gap-10'>
